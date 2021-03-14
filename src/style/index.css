@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: "Permanent Marker", cursive;
+  background-color: #5300b3;
+}
+
+*::-webkit-scrollbar-track {
+  scrollbar-track-color: rgba(0, 0, 0, 0.13);
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.13);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar {
+  z-index: 1;
+  scrollbar-track-color: rgba(0, 0, 0, 0.13);
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.13);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.44, #7800ff),
+    color-stop(0.72, #7800ff),
+    color-stop(0.86, #7800ff)
+  );
+}
