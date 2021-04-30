@@ -1,4 +1,5 @@
 import React, { useCallback, useReducer, useState } from "react";
+// import axios from "axios";
 import { ModalState } from "../../../../redux/selectors";
 import { useSelector, useDispatch } from "react-redux";
 import { setShow } from "../../../../redux/actions";
@@ -14,8 +15,9 @@ import {
   X1,
   X2,
 } from "./style";
-// import { Frame } from "framer";
 import { motion } from "framer-motion";
+
+import { Login } from "../../../../services/Login/services";
 
 export default function ModalLogin() {
   const dispatch = useDispatch();
@@ -29,16 +31,18 @@ export default function ModalLogin() {
     dispatch(setShow());
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    setLogin(event.target[0].value);
-    setSenha(event.target[1].value);
-    alert(event.target[1].value);
-  };
+    Login(event.target[0].value,event.target[1].value)
 
-  const [login, setLogin] = useState();
-  const [senha, setSenha] = useState();
+    // const response = await axios.post("http://localhost:8080/Login", {
+    //   login: event.target[0].value,
+    //   senha: event.target[1].value,
+    // });
+
+    // console.log(response);
+  };
 
   if (showModal) {
     return (
