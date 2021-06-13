@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LeftMenu = styled.div`
-  z-index: 100;
+  z-index: 99;
   overflow-x: hidden;
   overflow-y: auto;
   display: block;
@@ -10,21 +10,17 @@ export const LeftMenu = styled.div`
   background-color: white;
   align-items: center;
   position: fixed;
-  transition: transform 0.3s ease-in-out;
+  /* transition: transform 0.3s ease-in-out; */
+  transition: 500ms;
   box-shadow: ${({ open }) =>
-    open ? "1px 1px 20px 0px black" : "0px 0px 0px 0px black"};
+    open ? "rgb(0 0 0 / 50%) 0px 1px 15px 2px" : "rgb(0 0 0 / 50%) 0px 0px 0px 0px"};
+    /* open ? "1px 1px 20px 0px black" : "0px 0px 0px 0px black"}; */
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-75%)")};
 
   @media (max-width: 1024px) {
     width: 300px;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   }
-`;
-
-export const Titulo = styled.h1`
-  margin-top: 5%;
-  margin-top: 10%;
-  margin-left: 80px;
 `;
 
 export const ListaMenu = styled.div``;

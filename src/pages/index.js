@@ -22,7 +22,7 @@ export default function Index() {
           <Menu open={open} setOpen={setOpen}></Menu>
         </div>
         <ModalLogin />
-        <Home />
+        <Home open={open} setOpen={setOpen}/>
         <Footer />
       </div>
     </div>

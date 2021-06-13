@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ModalState } from "../../redux/selectors";
+import { ModalLoginState } from "../../redux/selectors";
 import { useSelector } from "react-redux";
 import {
   Header,
@@ -14,8 +14,8 @@ import {
 
 import IconBusca from "../../assets/icons/IconBusca";
 
-export default function Home() {
-  const showModal = useSelector(ModalState);
+export default function Home({ open }) {
+  const showModal = useSelector(ModalLoginState);
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
@@ -99,19 +99,19 @@ export default function Home() {
             justifyContent: "center",
           }}
         >
-          <CardBusca>
+          {/* <CardBusca>
             <InputBusca></InputBusca>
             <ButtonBusca>
               <IconBusca />
               <span>BUSCAR</span>
             </ButtonBusca>
-          </CardBusca>
+          </CardBusca> */}
         </div>
       </Header>
 
-      <ContentHome scrollposition={scrollposition}>
+      <ContentHome scrollposition={scrollposition} open={open}>
         <ItemHome>
-          <Card>
+          <Card open={open}>
             <ContentCard>Classeficação: Camisetas</ContentCard>
             <ContentCard>
               {Camisetas.map((item) => (
@@ -126,7 +126,7 @@ export default function Home() {
           </Card>
         </ItemHome>
         <ItemHome>
-          <Card>
+          <Card open={open}>
             <ContentCard>Classeficação: Calças</ContentCard>
             <ContentCard>
               {Calcas.map((item) => (
@@ -141,7 +141,7 @@ export default function Home() {
           </Card>
         </ItemHome>
         <ItemHome>
-          <Card>
+          <Card open={open}>
             <ContentCard>Classeficação: Calçados</ContentCard>
             <ContentCard>
               {Calcados.map((item) => (

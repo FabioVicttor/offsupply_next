@@ -1,6 +1,6 @@
 import React, { useCallback, useReducer, useState } from "react";
 // import axios from "axios";
-import { ModalState } from "../../../../redux/selectors";
+import { ModalLoginState } from "../../../../redux/selectors";
 import { useSelector, useDispatch } from "react-redux";
 import { setShow } from "../../../../redux/actions";
 import {
@@ -21,7 +21,7 @@ import { Login } from "../../../../services/Login/services";
 
 export default function ModalLogin() {
   const dispatch = useDispatch();
-  const showModal = useSelector(ModalState);
+  const showModal = useSelector(ModalLoginState);
 
   React.useEffect(() => {
     document.body.style.overflow = showModal ? "hidden" : "auto";

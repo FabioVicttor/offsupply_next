@@ -1,16 +1,53 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  width: 600px;
-  height: 500px;
+  /* width: ${({ open }) => (open ? "590px" : "600px")}; */
+  /* width: 600px; */
+  height: ${({ open }) => (open ? "490px" : "500px")};
   background-color: white;
   margin: 20px;
   border-radius: 30px;
-  box-shadow: 0px 0px 15px 0px black;
+  box-shadow: ${({ open }) =>
+    open ? "none" : "rgb(0 0 0 / 50%) 0px 1px 15px 2px"};
+  transition: 500ms;
 
-  @media (min-width: 1024px) {
-    width: 80%;
-  }
+
+  @media (min-width: 2560px){
+    width: ${({ open }) => (open ? "75%" : "80%")};
+  };
+  @media (min-width: 1920px) and (max-width: 2559px){
+    width: ${({ open }) => (open ? "1490px" : "1500px")};
+  };
+  @media (min-width: 1601px) and (max-width: 1919px){
+    width: ${({ open }) => (open ? "1290px" : "1300px")};
+  };
+  @media (min-width: 1441px) and (max-width: 1600px){
+    width: ${({ open }) => (open ? "1190px" : "1200px")};
+  };
+  @media (min-width: 1280px) and (max-width: 1440px){
+    width: ${({ open }) => (open ? "1090px" : "1100px")};
+  };
+  @media (min-width: 1025px) and (max-width: 1279px){
+    width: ${({ open }) => (open ? "790px" : "800px")};
+  };
+  @media (min-width: 830px) and (max-width: 1024px){
+    width: ${({ open }) => (open ? "780px" : "790px")};
+  };
+  @media (min-width: 768px) and (max-width: 829px){
+    width: ${({ open }) => (open ? "680px" : "690px")};
+  };
+  @media (min-width: 550px) and (max-width: 767px){
+    width: ${({ open }) => (open ? "570px" : "580px")};
+  };
+  @media (min-width: 425px) and (max-width: 549px){
+    width: ${({ open }) => (open ? "370px" : "380px")};
+  };
+  @media (min-width: 375px) and (max-width: 424px) {
+    width: ${({ open }) => (open ? "330px" : "335px")};
+  };
+  @media (min-width: 320px) and (max-width: 374px) {
+    width: ${({ open }) => (open ? "270px" : "280px")};
+  };
 `;
 
 export const ItemHome = styled.div`
@@ -30,7 +67,8 @@ export const Header = styled.div`
 
 export const ContentHome = styled.div`
   background-color: transparent;
-  margin-top: -120px;
+  margin-top: ${({ open }) => (open ? "-110px" : "-120px")};
+  transition: 500ms;
 `;
 
 export const CardBusca = styled.div`
